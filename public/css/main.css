@@ -1,0 +1,22 @@
+/*Css for home site*/
+
+body {
+  min-height: 1024px;
+}
+
+header {
+  min-height: 300px;
+}
+
+#title-image {
+  width: 640px;
+  height: 300px;
+  background-image: url('/images/CoverImage.png');
+  background-repeat: no-repeat;
+}
+
+.mybutton {
+  width: 100px;
+  height: 0;
+
+}
