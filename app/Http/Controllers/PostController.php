@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use Illuminate\Http\Request;
 use App\Http\Requests\Request;
 use App\Post;
+use App\Tag;
 use Carbon\Carbon;
 use App\Http\Requests\PostRequest;
 
@@ -22,8 +23,7 @@ class PostController extends Controller
      */
     public function index()
     {
-      $posts = Post::where('published_at', '<=', Carbon::now())
-          ->orderBy('published_at', 'desc')->get();
+      $posts = Post::paginate(15);
 
       return view('posts.index', compact('posts'));
     }
@@ -35,7 +35,8 @@ class PostController extends Controller
      */
     public function create()
     {
-      return view('posts.create');//->with('categories' ,$categories);
+      $tags = Tag::pluck('name', 'id');
+      return view('posts.create')->withTags($tags);//->with('categories' ,$categories);
     }
 
     /**
@@ -46,8 +47,19 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
+      $file = $request->file('image');
+      $path = $file->store('public/uploads');
+
+      // Merge the new path to the request
+      $request->merge(array('image_path' => $path));
+
       $post = Post::create($request->all());
-        return redirect(action('PostController@show', $post->id))
+
+      $tagIds = $request->input('tag_list');
+
+      $post->tags()->attach($tagIds);
+
+      return redirect(action('PostController@show', $post->id))
             ->with('message', 'Post wurde erstellt!');
     }
 
@@ -72,8 +84,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        $tags = Tag::pluck('name', 'id');
         return view('posts.edit')
-                ->with('post', $post);
+                ->with('post', $post)
+                ->with('tags', $tags);
     }
 
     /**
@@ -85,8 +99,11 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-      $post->fill($request->all());
-      $post->save();
+      //dd($request->all());
+      $post->update($request->all());
+;
+      $post->tags()->sync( $request->input('tag_list') );
+
         return redirect('posts')
             ->with('message', 'Post wurde geändert!');
     }

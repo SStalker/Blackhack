@@ -24,7 +24,7 @@
 <body>
   @include('layouts.nav')
 	<br/>
-	<div class="container">
+	<div id="content" class="container">
 		@yield('content')
   </div>
 

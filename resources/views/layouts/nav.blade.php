@@ -7,7 +7,7 @@
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
        </button>
-       <a class="navbar-brand" href="https://blackhack.de">Blackhack</a>
+       <a class="navbar-brand" href="{{ URL::to('/') }}">Blackhack</a>
    </div>
    <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-2">
        <ul class="nav navbar-nav">
@@ -50,7 +50,32 @@
                    </li>
                </ul>
            </li>
+           @if(Auth::user())
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
+                 <ul class="dropdown-menu">
+                   <li><a href="{{ url('/posts') }}">Administrate Posts</a></li>
+                   <li><a href="#">Another action</a></li>
+                   <li>
+                     <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        Logout
+                     </a>
+                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                     </form>
+                    </li>
+                 </ul>
+             </li>
+           @endif
            <li><a href="#">Contact</a></li>
+           <li>
+             {!! Form::open(['url' => 'search', 'method' => 'GET', 'class' => 'input-group navbar-form navbar-right']) !!}
+               <div class='form-group input-group-btn'>
+                 {!! Form::text('searchtext', null, ['class' => 'form-control', 'placeholder' => 'Suche...']) !!}
+                 {!! Form::button('Suchen', ['type' => 'submit', 'class' => 'btn btn-default ']) !!}
+               </div>
+             {!! Form::close() !!}
+           </li>
        </ul>
    </div>
    <!--/.navbar-collapse-->

@@ -9,8 +9,8 @@ class StartController extends Controller
 {
   public function getIndex()
   {
-    $posts = DB::table('posts')->take(5)->get();    
-
+    $posts = DB::table('posts')->where('published_at', '<=', \Carbon\Carbon::now())->take(5)->orderBy('published_at', 'desc')->get();
+    //dd($posts);
     return view('welcome')
       ->withPosts($posts);
   }

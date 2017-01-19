@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
   protected $dates = ['published_at'];
-
-  protected $fillable = ['title', 'content'];
+  protected $fillable = ['title', 'content', 'image_path', 'published_at'];
 
   public function setTitleAttribute($value)
   {
@@ -17,5 +16,20 @@ class Post extends Model
     if (! $this->exists) {
       $this->attributes['slug'] = str_slug($value);
     }
+  }
+
+  /*protected function getDateFormat()
+  {
+    return 'd-m-Y H:m:s';
+  }*/
+
+  public function tags()
+  {
+    return $this->belongsToMany('App\Tag')->withTimestamps();
+  }
+
+  public function getTagListAttribute()
+  {
+    return $this->tags->pluck('id')->all();
   }
 }
