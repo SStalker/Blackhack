@@ -27,6 +27,12 @@ $factory->define(App\Post::class, function ($faker) {
     'title' => $faker->sentence(mt_rand(3, 10)),
     'content' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
     'published_at' => $faker->dateTimeBetween('-1 month', '+3 days'),
-    'image_path' => 'cute-anime-pictures-21.jpg',
+    'image_path' => 'public/uploads/cute-anime-pictures-21.jpg',
   ];
+});
+
+$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+    ];
 });
