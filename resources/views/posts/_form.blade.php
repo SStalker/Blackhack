@@ -16,7 +16,7 @@
 
 <div class="form-group">
   {!! Form::label('published_at', 'Publishing date') !!}
-  {!! Form::date('published_at', \Carbon\Carbon::now() .'', ['class' => 'form-control']) !!}
+  {!! Form::date('published_at', $post->published_at ? $post->published_at.'' : \Carbon\Carbon::now().'' , ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">

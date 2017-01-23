@@ -71,8 +71,7 @@
            <li>
              {!! Form::open(['url' => 'search', 'method' => 'GET', 'class' => 'input-group navbar-form navbar-right']) !!}
                <div class='form-group input-group-btn'>
-                 {!! Form::text('searchtext', null, ['class' => 'form-control', 'placeholder' => 'Suche...']) !!}
-                 {!! Form::button('Suchen', ['type' => 'submit', 'class' => 'btn btn-default ']) !!}
+                 {!! Form::text('query', null, ['class' => 'form-control', 'placeholder' => 'Suche...']) !!}
                </div>
              {!! Form::close() !!}
            </li>

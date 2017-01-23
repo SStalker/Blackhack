@@ -18,7 +18,7 @@
         @foreach($posts as $post)
           <tr>
             <td>{{ $post->id }}</td>
-            <td>{{ $post->title }}</td>
+            <td><a href="{{ action('PostController@show', $post->id) }}">{{ $post->title }}</a></td>
             <td>{{ str_limit($post->content) }}</td>
             <td>{{ $post->image_path }}</td>
             <td>{{ $post->published_at }}</td>

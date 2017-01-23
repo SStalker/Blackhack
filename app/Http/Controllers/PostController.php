@@ -33,10 +33,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Post $post)
     {
       $tags = Tag::pluck('name', 'id');
-      return view('posts.create')->withTags($tags);//->with('categories' ,$categories);
+      return view('posts.create')->withTags($tags)->withPost($post);//->with('categories' ,$categories);
     }
 
     /**
@@ -47,8 +47,8 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-      $file = $request->file('image');
-      $path = $file->store('public/uploads');
+      //dd($request->all());
+      $path = $request->file('image')->store('public/uploads');
 
       // Merge the new path to the request
       $request->merge(array('image_path' => $path));

@@ -11,11 +11,22 @@
 |
 */
 
-
-Route::get('/','StartController@getIndex');
-
+/*
+  Authentication routes
+ */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+/*
+  Startroute to homepage
+ */
+Route::get('/','StartController@getIndex');
 
+/*
+  Restful routes for posts
+ */
 Route::resource('posts', 'PostController');
+
+/*
+  Queryroute for the searchbar in the nav
+ */
+Route::get('search', 'SearchController@search');
