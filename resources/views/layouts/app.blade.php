@@ -15,6 +15,14 @@
   <link href="/css/main.css" rel="stylesheet">
 
   <!-- Scripts -->
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+  <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+  <script>
+      $('textarea').ckeditor();
+      // $('.textarea').ckeditor(); // if class is prefered.
+  </script>
+
   <script>
       window.Laravel = <?php echo json_encode([
           'csrfToken' => csrf_token(),
@@ -23,7 +31,6 @@
 </head>
 <body>
   @include('layouts.nav')
-	<br/>
 	<div id="content" class="container">
 		@yield('content')
   </div>

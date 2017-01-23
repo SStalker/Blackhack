@@ -1,5 +1,11 @@
 /*Css for home site*/
 
+/* Loading custom fonts */
+@font-face {
+    font-family: Concorde;
+    src: url('/fonts/Concorde Nova BQ Regular.ttf');
+}
+
 html, body {
     background-color: #fff;
     color: #636b6f;
@@ -39,6 +45,7 @@ h3 {
 .navbar-default{
    background: none;
    margin-top: 200px;
+   margin-bottom: 100px;
    padding: 0px;
    /*max-width: 1024px;*/
    border-width: 0px 0px 0px 0px;

@@ -14,13 +14,13 @@
            <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
                <ul class="dropdown-menu">
-                   <li><a href="#">Action</a></li>
-                   <li><a href="#">Another action</a></li>
-                   <li><a href="#">Something else here</a></li>
+                   <li><a href="#">Toy Wars - Unreal Engine Project</a></li>
+                   <li><a href="#">Asteroids</a></li>
+                   <li><a href="#">Drolraw - Online CCG</a></li>
                    <li class="divider"></li>
-                   <li><a href="#">Separated link</a></li>
+                   <li><a href="#">EVOS - Electronic Voting System Osnabrück</a></li>
                    <li class="divider"></li>
-                   <li><a href="#">One more separated link</a></li>
+                   <li><a href="#">LagunaChat</a></li>
                </ul>
            </li>
            <li class="dropdown">
@@ -28,24 +28,14 @@
                <ul class="dropdown-menu multi-column columns-2">
                    <li>
                        <ul class="multi-column-dropdown col-sm-6">
-                           <li><a href="#">Action</a></li>
-                           <li><a href="#">Another action</a></li>
-                           <li><a href="#">Something else here that's extra long so we can see how it looks</a></li>
-                           <li class="divider"></li>
-                           <li><a href="#">Separated link</a></li>
-                           <li class="divider"></li>
-                           <li><a href="#">One more separated link</a></li>
+                           <li><a href="#">WLAN-Scanner</a></li>
+                           <li><a href="#">MAS</a></li>
                        </ul>
                    </li>
                    <li>
                        <ul class="multi-column-dropdown col-sm-6">
-                           <li><a href="#">Action</a></li>
-                           <li><a href="#">Another action</a></li>
-                           <li><a href="#">Something else here</a></li>
-                           <li class="divider"></li>
-                           <li><a href="#">Separated link</a></li>
-                           <li class="divider"></li>
-                           <li><a href="#">One more separated link</a></li>
+                           <li><a href="#">Hacking under friends</a></li>
+                           <li><a href="#">WPA2 Crack</a></li>
                        </ul>
                    </li>
                </ul>
@@ -54,8 +44,7 @@
              <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
                  <ul class="dropdown-menu">
-                   <li><a href="{{ url('/posts') }}">Administrate Posts</a></li>
-                   <li><a href="#">Another action</a></li>
+                   <li><a href="{{ url('/posts') }}">Manage Posts</a></li>
                    <li>
                      <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         Logout
