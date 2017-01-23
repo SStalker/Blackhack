@@ -26,7 +26,7 @@ class TagsTableSeeder extends Seeder
         ['name' => 'C/C++', 'created_at' => $current_time, 'updated_at' => $current_time],
         ['name' => 'Python', 'created_at' => $current_time, 'updated_at' => $current_time],
         ['name' => 'Java', 'created_at' => $current_time, 'updated_at' => $current_time],
-        ['name' => 'Android', 'created_at' => $current_time, 'updated_at' => $current_time]
+        ['name' => 'Android', 'created_at' => $current_time, 'updated_at' => $current_time],
         ['name' => 'Tutorial', 'created_at' => $current_time, 'updated_at' => $current_time]
       ]);
     }
