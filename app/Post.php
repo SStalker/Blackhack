@@ -18,11 +18,6 @@ class Post extends Model
     }
   }
 
-  /*protected function getDateFormat()
-  {
-    return 'd-m-Y H:m:s';
-  }*/
-
   public function tags()
   {
     return $this->belongsToMany('App\Tag')->withTimestamps();

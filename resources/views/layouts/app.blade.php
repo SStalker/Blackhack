@@ -13,9 +13,11 @@
   <!-- Styles -->
   <link href="/css/app.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/select2.min.css" rel="stylesheet" />
 
   <!-- Scripts -->
   <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/select2.min.js"></script>
   <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
   <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
   <script>
@@ -34,7 +36,9 @@
 	<div id="content" class="container">
 		@yield('content')
   </div>
-
+  <footer>
+    @yield('footer')
+  </footer>
   <!-- Scripts -->
   <script src="/js/app.js"></script>
 </body>

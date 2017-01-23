@@ -19,6 +19,11 @@ h3 {
   margin-top: 0px;
 }
 
+/* Create a margin after the footer so we can scroll down more */
+footer{
+  margin-bottom: 200px;
+}
+
 /* Change the link design for the content */
 #content a,a:hover{
   color: black;

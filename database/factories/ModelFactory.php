@@ -30,9 +30,3 @@ $factory->define(App\Post::class, function ($faker) {
     'image_path' => 'public/uploads/cute-anime-pictures-21.jpg',
   ];
 });
-
-$factory->define(App\Tag::class, function (Faker\Generator $faker) {
-    return [
-        'name' => $faker->name,
-    ];
-});

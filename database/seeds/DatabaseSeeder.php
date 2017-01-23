@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UsersTableSeeder::class);
+        $this->call(TagsTableSeeder::class);
 
         Model::unguard();
-        $this->call('PostTableSeeder');
-        $this->call('TagTableSeeder');
+        //$this->call('PostTableSeeder');
     }
 }
 
@@ -28,13 +28,5 @@ class PostTableSeeder extends Seeder
     //App\Tag::truncate();
 
     factory(App\Post::class, 20)->create();
-  }
-}
-
-class TagTableSeeder extends Seeder
-{
-  public function run()
-  {
-    factory(App\Tag::class, 5)->create();
   }
 }

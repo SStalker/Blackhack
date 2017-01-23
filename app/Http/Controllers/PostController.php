@@ -47,8 +47,9 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-      //dd($request->all());
-      $path = $request->file('image')->store('public/uploads');
+      $path = '';
+      if ($request->hasFile('image'))
+        $path = $request->file('image')->store('public/uploads');
 
       // Merge the new path to the request
       $request->merge(array('image_path' => $path));
@@ -99,12 +100,19 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-      //dd($request->all());
+      if ($request->hasFile('image')){
+        $path = $request->file('image')->store('public/uploads');
+
+        // Merge the new path to the request
+        $request->merge(array('image_path' => $path));
+      }
+
+
       $post->update($request->all());
-;
+
       $post->tags()->sync( $request->input('tag_list') );
 
-        return redirect('posts')
+        return redirect('/')
             ->with('message', 'Post wurde geändert!');
     }
 
