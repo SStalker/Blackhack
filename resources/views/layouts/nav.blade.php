@@ -45,6 +45,7 @@
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
                  <ul class="dropdown-menu">
                    <li><a href="{{ url('/posts') }}">Manage Posts</a></li>
+                   <li><a href="{{ url('/accountings') }}">Manage Accountings</a></li>
                    <li>
                      <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         Logout

@@ -30,3 +30,8 @@ Route::resource('posts', 'PostController');
   Queryroute for the searchbar in the nav
  */
 Route::get('search', 'SearchController@search');
+
+/*
+  Routes for the BudgetController
+ */
+Route::resource('accountings', 'AccountingController');
