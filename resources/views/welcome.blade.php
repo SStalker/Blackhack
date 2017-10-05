@@ -3,7 +3,7 @@
 @section('title', 'Startseite')
 
 @section('content')
-<h1 class="text-center">Aktuelle News</h1>
+<h1 class="text-center">Aktuelle News :D</h1>
   <div class="container-fluid">
     <hr>
     @foreach ($posts as $post)

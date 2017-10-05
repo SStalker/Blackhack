@@ -14,13 +14,13 @@
            <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
                <ul class="dropdown-menu">
-                   <li><a href="#">Toy Wars - Unreal Engine Project</a></li>
-                   <li><a href="#">Asteroids</a></li>
-                   <li><a href="#">Drolraw - Online CCG</a></li>
+                   <li><a href="{{ URL::to('toy_wars') }}">Toy Wars - Unreal Engine Project</a></li>
+                   <li><a href="{{ URL::to('asteroids') }}">Asteroids</a></li>
+                   <li><a href="{{ URL::to('drolraw') }}">Drolraw - Online CCG</a></li>
                    <li class="divider"></li>
-                   <li><a href="#">EVOS - Electronic Voting System Osnabrück</a></li>
+                   <li><a href="{{ URL::to('evos') }}">EVOS - Electronic Voting System Osnabrück</a></li>
                    <li class="divider"></li>
-                   <li><a href="#">LagunaChat</a></li>
+                   <li><a href="{{ URL::to('laguna') }}">LagunaChat</a></li>
                </ul>
            </li>
            <li class="dropdown">
@@ -28,14 +28,14 @@
                <ul class="dropdown-menu multi-column columns-2">
                    <li>
                        <ul class="multi-column-dropdown col-sm-6">
-                           <li><a href="#">WLAN-Scanner</a></li>
-                           <li><a href="#">MAS</a></li>
+                           <li><a href="{{ URL::to('wlan-scanner') }}">WLAN-Scanner</a></li>
+                           <li><a href="{{ URL::to('mas') }}">MAS</a></li>
                        </ul>
                    </li>
                    <li>
                        <ul class="multi-column-dropdown col-sm-6">
-                           <li><a href="#">Hacking under friends</a></li>
-                           <li><a href="#">WPA2 Crack</a></li>
+                           <li><a href="{{ URL::to('hacking-under-friends') }}">Hacking under friends</a></li>
+                           <li><a href="{{ URL::to('wpa2-crack') }}">WPA2 Crack</a></li>
                        </ul>
                    </li>
                </ul>
@@ -57,7 +57,7 @@
                  </ul>
              </li>
            @endif
-           <li><a href="#">Contact</a></li>
+           <li><a href="{{ URL::to('contact') }}">Contact</a></li>
            <li>
              {!! Form::open(['url' => 'search', 'method' => 'GET', 'class' => 'input-group navbar-form navbar-right']) !!}
                <div class='form-group input-group-btn'>

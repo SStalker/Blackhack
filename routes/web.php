@@ -35,3 +35,15 @@ Route::get('search', 'SearchController@search');
   Routes for the BudgetController
  */
 Route::resource('accountings', 'AccountingController');
+
+/*
+  Static Sites
+*/
+
+$static_sites = ['contact', 'toy_wars', 'asteroids', 'drolraw', 'evos', 'laguna', 'wlan-scanner', 'mas', 'hacking-under-friends', 'wpa2-crack'];
+
+foreach ($static_sites as $site) {
+	Route::get($site, function() use($site){
+		return View::make($site);
+	});
+}

@@ -24,6 +24,10 @@ footer{
   margin-bottom: 200px;
 }
 
+#content {
+  color: black;
+}
+
 /* Change the link design for the content */
 #content a,a:hover{
   color: black;

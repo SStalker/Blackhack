@@ -6,7 +6,7 @@
 			<div class="col-md-3 centered pull-left">
 				<img class="img-thumbnail" src="{!! Storage::url($post->image_path) !!}" alt="No image available">
 			</div>
-      <div class="col-md-6">
+      <div class="col-md-8">
         <div class="col-md-12">
             <h3>{!! $post->title !!}</h3>
         </div>
